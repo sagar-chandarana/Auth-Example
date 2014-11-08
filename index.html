@@ -5,16 +5,40 @@
   </title>
 </head>
   <body>
-    <div>
-      <div id="login_button">
+    
+      <div id="login_button" style="display: none">
         <button onclick="login()">Login</button>
       </div>
-      <div id="login_userInfo">
+    <div id="login_userInfo" style="display: none">
+      <div>
         <!-- <img> and <span> tags are necessary !-->
+        <h3>Logged in user</h3>
         <img style="width: 50px; height: 50px"> <span></span>
         <button onclick="logout()">Logout</button>
       </div>
+      <hr>
+      <div>
+        <h3>Newly added this time</h3>
+        <ul id="new">
+
+        </ul>
+      </div>
+      <hr>
+      <div>
+        <h3>Deleted this time</h3>
+        <ul id="removed">
+
+        </ul>
+      </div>
+      <hr>
+      <div>
+        <h3>Contacts (Stored in Appbase)</h3>
+        <ul id="existing">
+
+        </ul>
+      </div>
     </div>
+    
     
     <script src="//cdn.appbase.io/latest/appbase.js"></script>
     <script src="auth-example.js"></script>
