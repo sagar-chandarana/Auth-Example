@@ -102,9 +102,7 @@ var fetchPeopleFromGoogle = function(authObj, requestObj) {
 var allPeopleInGoogle = {};
 
 // if a person in circles in not present in Appbase as a contact, it adds the person
-var counter = 0;
 var addToContactsIfNew = function(authObj, person) {
-  if((counter += 1) > 7) return;
   allPeopleInGoogle[person.id] = person;
   var userRef = Appbase.ns('user').v(authObj.uid);
   userRef.outVertex(person.id).isValid(function(error, bool) {
