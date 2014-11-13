@@ -6,11 +6,11 @@ var savedCreds = Appbase.getAuth();
 
 //main function to execute
 var main = function() {
-  //if(savedCreds) {
-    //afterAuth(savedCreds.authObj, savedCreds.requestObj);
-  //} else {
+  if(savedCreds) {
+    afterAuth(savedCreds.authObj, savedCreds.requestObj);
+  } else {
     showLoginButton();
-  //}
+  }
 }
 
 //hides other elements and shows only the login button
@@ -107,7 +107,6 @@ var addToContactsIfNew = function(authObj, person) {
   var userRef = Appbase.ns('user').v(authObj.uid);
   userRef.outVertex(person.id).isValid(function(error, bool) {
     if(error) throw error;
-    console.log(arguments);
     if(bool) { //the contact already exists
     } else {
       var newContactRef = Appbase.ns('user').v(person.id);
