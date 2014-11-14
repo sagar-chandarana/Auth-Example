@@ -75,7 +75,7 @@ var removePersonFromView = function(person, feed) {
   li.parentNode.removeChild(element);
 }
 
-// list ecisting contacts of the user in appbase
+// list existing contacts of the user in appbase
 var listExistingPeople = function(authObj) {
   Appbase.ns('user').v(authObj.uid).on('edge_added', function(error, eRef, eSnap) {
     if(error) throw error;
