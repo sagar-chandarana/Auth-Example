@@ -26,10 +26,10 @@ var showLoginButton = function() {
 }
 
 //hides login button and shows user info
-var showUserInfo = function(userProfile) {
+var showUserInfo = function(authObj) {
   document.getElementById("login_button").style.display = 'none';
-  document.getElementById("login_userInfo").getElementsByTagName("img")[0].src = userProfile.avatar;
-  document.getElementById("login_userInfo").getElementsByTagName("span")[0].innerHTML = userProfile.name;
+  document.getElementById("login_userInfo").getElementsByTagName("img")[0].src = authObj.avatar;
+  document.getElementById("login_userInfo").getElementsByTagName("span")[0].innerHTML = authObj.name;
   document.getElementById("login_userInfo").style.display = 'block';
 }
 
