@@ -1,5 +1,5 @@
 //Auth Example, Sagar.
-Appbase.credentials('sagar');
+Appbase.credentials('auth_example');
 
 //see if the user is already authenticated
 var savedCreds = Appbase.getAuth();
@@ -13,10 +13,16 @@ var main = function() {
   }
 }
 
-//hides other elements and shows only the login button
+//hides/removes other elements and shows only the login button
 var showLoginButton = function() {
   document.getElementById("login_userInfo").style.display = 'none';
   document.getElementById("login_button").style.display = 'block';
+  ["new", "existing", "removed"].forEach(function(feed) {
+    var feedElement = document.getElementById(feed);
+    while (feedElement.lastChild) {
+        feedElement.removeChild(feedElement.lastChild);
+    }
+  });
 }
 
 //hides login button and shows user info
