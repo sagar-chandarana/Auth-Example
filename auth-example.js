@@ -72,7 +72,7 @@ var addPersonToView = function(person, feed) {
 // removes a person from the view
 var removePersonFromView = function(person, feed) {
   var li = document.getElementById(person.id + feed);
-  li.parentNode.removeChild(element);
+  li.parentNode.removeChild(li);
 }
 
 // list existing contacts of the user in appbase
